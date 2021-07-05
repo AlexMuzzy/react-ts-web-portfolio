@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Nav, Navbar, Container, Jumbotron } from "react-bootstrap";
+import { Nav, Navbar, Container, Jumbotron, Row, Col } from "react-bootstrap";
 
 import "./landingPage.css";
 
@@ -12,6 +12,11 @@ class LandingPage extends Component<MyProps, MyState> {
     this.state = { width: 0, height: 0 };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
+
+  /**
+   * Events to listen on each resize of browser. Will allow for size of landing page
+   * component to be dynamically resized.
+   * */
 
   componentDidMount() {
     this.updateWindowDimensions();
@@ -36,22 +41,27 @@ class LandingPage extends Component<MyProps, MyState> {
     } else {
       console.debug("Nav bar not found. Has it not rendered yet?");
     }
-    this.setState({ width: docWidth, height: docHeight});
+    this.setState({ width: docWidth, height: docHeight });
   }
 
   // Allows for dynamic resizing of document in React to affect background size.
 
   render() {
     const jumbotronStyle = {
+      backgroundColor: "transparent !important",
       display: "flex",
       minHeight: "inherit",
       margin: "0",
       padding: "0",
     };
 
+    const landingRow = {
+      minHeight: this.state.height / 3,
+    };
+
     return (
       <>
-        <Navbar bg="dark" variant="dark" expand="md" id="top-navbar">
+        <Navbar bg="light" variant="light" expand="md" id="top-navbar">
           <Container>
             <Navbar.Brand href="#home">Alex Musgrove</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar-nav" />
@@ -65,11 +75,26 @@ class LandingPage extends Component<MyProps, MyState> {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-        <Container style={{ minHeight: this.state.height}}>
+        <Container style={{ minHeight: this.state.height }}>
           <Jumbotron className="clear-colour" style={jumbotronStyle}>
-            <h1 className="m-auto" style={{ height: "100%" }}>
-              Alex Musgrove
-            </h1>
+            <Row>
+              <Col md="12" lg="10">
+                <Row style={landingRow}></Row>
+                <Row style={landingRow}>
+                  <h1 className="m-auto text-center" style={{ height: "100%" }}>
+                    Alex Musgrove
+                  </h1>
+                </Row>
+                <Row style={landingRow}></Row>
+              </Col>
+              <Col md="12" lg="2" style={{ height: "100%" }}>
+                <Row style={landingRow}></Row>
+                <Row style={{ borderLeft: "2px solid black", ...landingRow }}>
+
+                </Row>
+                <Row style={landingRow}></Row>
+              </Col>
+            </Row>
           </Jumbotron>
         </Container>
       </>
