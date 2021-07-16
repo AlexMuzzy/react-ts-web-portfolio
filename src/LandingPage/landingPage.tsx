@@ -1,26 +1,12 @@
 import React, { Component } from "react";
-import {
-  Nav,
-  Navbar,
-  Container,
-  Jumbotron,
-  Row,
-  Col,
-  ListGroup,
-} from "react-bootstrap";
+import { Container, Jumbotron, Row, Col, ListGroup } from "react-bootstrap";
 
 import "./landingPage.css";
-
 import background from "./../assets/paula-vermeulen-_f2m3mEkaaU-unsplash.jpg";
 
 type MyProps = { height: number };
-type MyState = {};
 
-class LandingPage extends Component<MyProps, MyState> {
-  constructor(props: MyProps) {
-    super(props);
-  }
-
+class LandingPage extends Component<MyProps, {}> {
   render() {
     const jumbotronStyle = {
       backgroundColor: "transparent !important",
@@ -42,61 +28,39 @@ class LandingPage extends Component<MyProps, MyState> {
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
+          height: this.props.height,
         }}
       >
-        <Container
-          style={{
-            height: this.props.height,
-          }}
-        >
-          {/* <Navbar
-            bg="light"
-            fixed="bottom"
-            variant="light"
-            expand="md"
-            id="top-navbar"
-          >
-            <Container>
-              <Navbar.Brand href="#home">Alex Musgrove</Navbar.Brand>
-              <Navbar.Toggle aria-controls="navbar-nav" />
-              <Navbar.Collapse id="navbar-nav">
-                <Nav className="ml-auto">
-                  <Nav.Link href="#home">Home</Nav.Link>
-                  <Nav.Link>About</Nav.Link>
-                  <Nav.Link>Services</Nav.Link>
-                  <Nav.Link>Contact</Nav.Link>
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar> */}
+        <Jumbotron className="clear-colour" style={jumbotronStyle}>
+          <Row>
+            <Col md="12" lg="7">
+              <Row style={landingRow} className="d-none d-lg-block"></Row>
+              <Row style={landingRow}>
+                <h1 className="m-auto text-center btn-shine">Alex Musgrove</h1>
+              </Row>
+              <Row style={landingRow} className="d-none d-lg-block"></Row>
+            </Col>
 
-          <Jumbotron className="clear-colour" style={jumbotronStyle}>
-            <Row>
-              <Col md="12" lg="8">
-                <Row style={landingRow} className="d-none d-lg-block"></Row>
-                <Row style={landingRow}>
-                  <h1 className="m-auto text-center btn-shine">
-                    Alex Musgrove
-                  </h1>
-                </Row>
-                <Row style={landingRow} className="d-none d-lg-block"></Row>
-              </Col>
-
-              <Col md="12" lg="4" style={{ height: "100%" }}>
-                <Row style={landingRow} className="d-none d-lg-block"></Row>
-                <Row style={landingRow}>
-                  <ListGroup variant="flush" style={{ width: "100%" }}>
-                    <ListGroup.Item>Home</ListGroup.Item>
+            <Col md="12" lg="5" style={{ height: "100%" }}>
+              <Row style={landingRow} className="d-none d-lg-block"></Row>
+              <Row style={landingRow}>
+                <ListGroup
+                  variant="flush"
+                  style={{ width: "100%" }}
+                  className="mr-3"
+                >
+                  <ListGroup.Item>Home</ListGroup.Item>
+                  <a href="#about">
                     <ListGroup.Item>About</ListGroup.Item>
-                    <ListGroup.Item>Services</ListGroup.Item>
-                    <ListGroup.Item>Contact</ListGroup.Item>
-                  </ListGroup>
-                </Row>
-                <Row style={landingRow} className="d-none d-lg-block"></Row>
-              </Col>
-            </Row>
-          </Jumbotron>
-        </Container>
+                  </a>
+                  <ListGroup.Item>Services</ListGroup.Item>
+                  <ListGroup.Item>Contact</ListGroup.Item>
+                </ListGroup>
+              </Row>
+              <Row style={landingRow} className="d-none d-lg-block"></Row>
+            </Col>
+          </Row>
+        </Jumbotron>
       </Container>
     );
   }
