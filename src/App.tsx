@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import LandingPage from "./LandingPage/landingPage";
 import BottomNavBar from "./BottomNavBar/bottomNavBar";
+import Experience from "./Experience/experience";
 
 class App extends Component {
   componentDidMount(){
@@ -11,6 +12,7 @@ class App extends Component {
     return (
       <>
         <LandingPage />
+        <Experience />
         <BottomNavBar />
       </>
     );
