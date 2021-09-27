@@ -144,13 +144,7 @@ class Experience extends Component {
     );
 
     return (
-      <Container
-        style={{
-          marginBottom: "3rem",
-          marginTop: "2rem",
-        }}
-        fluid
-      >
+      <Container fluid>
         <Row
           style={{
             height: "100%",
