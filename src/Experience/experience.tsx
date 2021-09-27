@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, CSSProperties } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import cgiLogo from "../assets/cgi-logo.png";
 import lboroLogo from "../assets/lboro-logo.jpg";
@@ -11,6 +11,11 @@ class Experience extends Component {
       workRole: string;
       workDescription?: string;
       workTechnologies?: string[];
+    };
+
+    const borderShadow: CSSProperties = {
+      boxShadow:
+        "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
     };
 
     const experienceItems: experienceType[] = [
@@ -85,11 +90,10 @@ class Experience extends Component {
           <Card
             style={{
               borderRadius: "1rem",
-              boxShadow:
-                "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
               border: "none",
               margin: "1em",
               width: "100%",
+              ...borderShadow,
             }}
           >
             <Card.Body>
@@ -123,8 +127,9 @@ class Experience extends Component {
                         margin: "0.5rem",
                         backgroundColor: "blue",
                         color: "white",
-                        borderRadius: "1rem",
+                        borderRadius: "0.75rem",
                         fontWeight: "lighter",
+                        ...borderShadow,
                       }}
                     >
                       {workTechnology}
