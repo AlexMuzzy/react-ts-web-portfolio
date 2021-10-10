@@ -1,21 +1,18 @@
-import { Component, CSSProperties } from "react";
+import React, { Component, CSSProperties } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import cgiLogo from "../assets/cgi-logo.png";
-import lboroLogo from "../assets/lboro-logo.jpg";
+import CardShadow from "../components/CardMapper";
+import cgiLogo from "../assets/CgiLogo.png";
+import lboroLogo from "../assets/LboroLogo.jpg";
+import SubHeading from "../components/SubHeading";
 
-class Experience extends Component {
+class Experience extends Component<{ borderShadow: CSSProperties }> {
   render() {
     type experienceType = {
       workName: string;
-      workImage: string;
+      workImage?: string;
       workRole: string;
       workDescription?: string;
       workTechnologies?: string[];
-    };
-
-    const borderShadow: CSSProperties = {
-      boxShadow:
-        "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
     };
 
     const experienceItems: experienceType[] = [
@@ -36,6 +33,7 @@ class Experience extends Component {
           "Network Programming",
         ],
       },
+
       {
         workName: "Loughborough University",
         workImage: lboroLogo,
@@ -54,6 +52,7 @@ class Experience extends Component {
           "GitHub",
         ],
       },
+
       {
         workName: "CGI IT UK",
         workImage: cgiLogo,
@@ -87,15 +86,7 @@ class Experience extends Component {
     }: experienceType) => (
       <Col md="6" xl="4" style={{ display: "flex" }}>
         <Row>
-          <Card
-            style={{
-              borderRadius: "1rem",
-              border: "none",
-              margin: "1em",
-              width: "100%",
-              ...borderShadow,
-            }}
-          >
+          <CardShadow>
             <Card.Body>
               <Row>
                 <Col sm="4">
@@ -129,7 +120,7 @@ class Experience extends Component {
                         color: "white",
                         borderRadius: "0.75rem",
                         fontWeight: "lighter",
-                        ...borderShadow,
+                        ...this.props.borderShadow,
                       }}
                     >
                       {workTechnology}
@@ -138,21 +129,14 @@ class Experience extends Component {
                 </Col>
               </Row>
             </Card.Body>
-          </Card>
+          </CardShadow>
         </Row>
       </Col>
     );
 
     return (
       <Container fluid>
-        <Row
-          style={{
-            height: "100%",
-            display: "flex",
-          }}
-        >
-          <h3 style={{ paddingLeft: "1rem" }}>Experience</h3>
-        </Row>
+        <SubHeading headingTitle="Experience" />
         <Row>
           {experienceItems.map((experienceItem: experienceType) => (
             <ExperienceItem {...experienceItem} />

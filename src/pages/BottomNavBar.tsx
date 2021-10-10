@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Component } from "react";
 import { Navbar } from "react-bootstrap";
 
-import "./bottomNavBar.css";
+import "./styles/BottomNavBar.css";
 
 class BottomNavBar extends Component {
   render() {

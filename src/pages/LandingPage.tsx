@@ -5,7 +5,7 @@ import { Container, Row } from "react-bootstrap";
 class LandingPage extends Component {
   render() {
     return (
-        <Container style={{ height: "35vh", marginTop: "5%" }}>
+        <Container style={{ height: "100vh" }}>
           <Row
             style={{
               height: "100%",
