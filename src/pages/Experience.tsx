@@ -17,24 +17,6 @@ class Experience extends Component<{ borderShadow: CSSProperties }> {
 
     const experienceItems: experienceType[] = [
       {
-        workName: "CGI IT UK",
-        workImage: cgiLogo,
-        workRole: "Junior Software Engineer",
-        workDescription: `Java Web back-end & 
-                          high performance C++ networking software.`,
-        workTechnologies: [
-          "Java",
-          "C++",
-          "SVN",
-          "Linux Development",
-          "GTest",
-          "JUnit",
-          "Java Servlet",
-          "Network Programming",
-        ],
-      },
-
-      {
         workName: "Loughborough University",
         workImage: lboroLogo,
         workRole: "Research Software Developer",
@@ -56,10 +38,10 @@ class Experience extends Component<{ borderShadow: CSSProperties }> {
       {
         workName: "CGI IT UK",
         workImage: cgiLogo,
-        workRole: "Software Engineering Placement",
-        workDescription: `Java web API Devlopment & 
-                          design and development of 
-                          a Python server side automation tool.`,
+        workRole: "Junior Software Engineer",
+        workDescription: `Java web API Devlopment, design and development of 
+                          a Python server side automation tool and performant
+                          C++ network software.`,
         workTechnologies: [
           "Java",
           "C++",
@@ -68,6 +50,9 @@ class Experience extends Component<{ borderShadow: CSSProperties }> {
           "Robot Framework",
           "API Development",
           "Git",
+          "GTest",
+          "JUnit",
+
           "Linux Development",
           "Bash",
           "PowerShell",
@@ -84,7 +69,7 @@ class Experience extends Component<{ borderShadow: CSSProperties }> {
       workDescription,
       workTechnologies,
     }: experienceType) => (
-      <Col md="6" xl="4" style={{ display: "flex" }}>
+      <Col lg="6" xs="12" style={{ display: "flex" }}>
         <Row>
           <CardShadow>
             <Card.Body>
@@ -135,7 +120,7 @@ class Experience extends Component<{ borderShadow: CSSProperties }> {
     );
 
     return (
-      <Container fluid>
+      <Container>
         <SubHeading headingTitle="Experience" />
         <Row>
           {experienceItems.map((experienceItem: experienceType) => (

@@ -1,7 +1,7 @@
 import React, { Component, CSSProperties } from "react";
 import { Card } from "react-bootstrap";
 
-class CardShadow extends Component {
+class CardShadow extends Component<{style?: CSSProperties}> {
   render() {
     const borderShadow: CSSProperties = {
       boxShadow:
@@ -16,6 +16,7 @@ class CardShadow extends Component {
           margin: "1em",
           width: "100%",
           ...borderShadow,
+          ...this.props?.style
         }}
       >
         {this.props?.children}

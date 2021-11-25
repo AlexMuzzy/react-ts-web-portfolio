@@ -1,0 +1,11 @@
+#blue-scrollbar::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+#blue-scrollbar::-webkit-scrollbar-thumb {
+  background: #0000ff;
+  border-radius: 30px;
+}
+#blue-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #babaff;
+}

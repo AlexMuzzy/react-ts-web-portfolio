@@ -3,6 +3,7 @@ import LandingPage from "./LandingPage";
 import BottomNavBar from "./BottomNavBar";
 import Experience from "./Experience";
 import Projects from "./Projects";
+import CanvasBackground from "../components/canvasBackground";
 
 class App extends Component {
   componentDidMount() {
@@ -18,11 +19,15 @@ class App extends Component {
     return (
       <>
         <div style={{ marginBottom: "3.5rem" }}>
+          {/* <CanvasBackground
+            height={window.innerHeight.toString()}
+            width={window.innerWidth.toString()}
+          /> */}
           {/* Margin is given to offset the navbar height as 
           its absolute position overlays the above elements. */}
           <LandingPage />
           <Projects borderShadow={borderShadow} />
-          <Experience borderShadow={borderShadow}/>
+          <Experience borderShadow={borderShadow} />
         </div>
         <BottomNavBar />
       </>
