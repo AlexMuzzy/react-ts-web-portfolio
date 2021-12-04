@@ -17,6 +17,7 @@ class LandingPage extends Component {
               className="text-center display-3"
               style={{
                 alignItems: "center",
+                alignSelf: "center",
                 display: "flex",
                 flexWrap: "wrap",
                 justifyContent: "center",
